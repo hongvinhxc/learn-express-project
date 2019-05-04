@@ -12,12 +12,8 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser());
 
-app.get('/', function(req, res) {
-	let status = false;
-	if(req.cookies.userId) status = true;
-	res.render('index', {
-		login: status
-	});
+app.get('/', middleware.requireAuth, function(req, res) {
+	res.render('index');
 });
 app.use(express.static('public'));
 

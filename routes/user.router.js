@@ -16,7 +16,7 @@ router.get('/search', controller.search);
 
 router.get('/create', controller.create); 
 
-router.get('/:id', controller.viewUser);
+router.get('/view/:id', controller.viewUser);
 
 router.post('/create', validate.middleware, controller.postCreate);
 

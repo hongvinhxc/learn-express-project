@@ -10,6 +10,8 @@ module.exports.requireAuth = function(req, res, next) {
 		res.redirect("auth/login");
 		return;
 	}
+
+	res.locals.user = user;
 	next();
 }
 
