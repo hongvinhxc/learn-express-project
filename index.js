@@ -10,9 +10,10 @@ const cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookieParser());
+app.use(cookieParser("doanxem"));
 
 app.get('/', middleware.requireAuth, function(req, res) {
+	// console.log(req.cookies,req.signedCookies);
 	res.render('index');
 });
 app.use(express.static('public'));

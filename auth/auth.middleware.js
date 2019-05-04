@@ -1,11 +1,11 @@
 const db = require('../db');
 
 module.exports.requireAuth = function(req, res, next) {
-	if (!req.cookies.userId) {
+	if (!req.signedCookies.userId) {
 		res.redirect("auth/login");
 		return;
 	}
-	let user = db.get("users").find({id : req.cookies.userId}).value(); 
+	let user = db.get("users").find({id : req.signedCookies.userId}).value(); 
 	if (!user) {
 		res.redirect("auth/login");
 		return;
@@ -16,11 +16,11 @@ module.exports.requireAuth = function(req, res, next) {
 }
 
 module.exports.confirmAuth = function(req, res, next) {
-	if (!req.cookies.userId) {
+	if (!req.signedCookies.userId) {
 		next();
 		return;
 	}
-	let user = db.get("users").find({id : req.cookies.userId}).value(); 
+	let user = db.get("users").find({id : req.signedCookies.userId}).value(); 
 	if (!user) {
 		next();
 		return;
