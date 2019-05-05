@@ -1,14 +1,14 @@
 const db = require('../db');
 
 module.exports.getIndex = function(req, res) {
-	let page = req.query.page || 1;
+	let page = parseInt(req.query.page) || 1;
 	let number = Math.ceil(db.get("products").value().length/8);
 	listProduct = db.get("products").value().slice((page-1)*8, page*8);
 	res.render('products/index', {
 		list : listProduct,
 		page : page,
 		allPage: number,
-		url: 'products'
+		url: 'products?'
 	});
 }
 
@@ -23,6 +23,6 @@ module.exports.search = function(req, res) {
 		list : listProduct,
 		page : page,
 		allPage: number,
-		url: 'products/search?q=' + key
+		url: 'products/search?q=' + key +"&"
 	});
 }

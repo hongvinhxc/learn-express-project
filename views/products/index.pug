@@ -25,59 +25,59 @@ block content
 									| 1
 									span.sr-only (current)
 							li.page-item
-								a.page-link(href='/'+url+'&page=2') 2
+								a.page-link(href='/'+url+'page=2') 2
 							li.page-item
-								a.page-link(href='/'+url+'&page=2') Next
+								a.page-link(href='/'+url+'page=2') Next
 						else if page == allPage
 							li.page-item
-								a.page-link(href='/'+url+'&page=1') Previous
+								a.page-link(href='/'+url+'page=1') Previous
 							li.page-item
-								a.page-link(href='/'+url+'&page=1')= 1
+								a.page-link(href='/'+url+'page=1')= 1
 							li.page-item.active(aria-current='page')
 								span.page-link= page
 									span.sr-only (current)
 					else
 						- var previousPage = page - 1
-						- var nextPage = page - - 1
+						- var nextPage = page + 1
 						if page == 1
 							li.page-item.active(aria-current='page')
 								span.page-link
 									| 1
 									span.sr-only (current)
 							li.page-item
-								a.page-link(href='/'+url+'&page=2') 2
+								a.page-link(href='/'+url+'page=2') 2
 							li.page-item
-								a.page-link(href='/'+url+'&page=3') 3
+								a.page-link(href='/'+url+'page=3') 3
 							li.page-item
-								a.page-link(href='/'+url+'&page=2') Next
+								a.page-link(href='/'+url+'page=2') Next
 							li.page-item
-								a.page-link(href='/'+url+'&page='+allPage) Last
+								a.page-link(href='/'+url+'page='+allPage) Last
 						else if page == allPage
 							li.page-item
-								a.page-link(href='/'+url+'&page=1') First
+								a.page-link(href='/'+url+'page=1') First
 							li.page-item
-								a.page-link(href='/'+url+'&page='+previousPage) Previous
+								a.page-link(href='/'+url+'page='+previousPage) Previous
 							li.page-item
-								a.page-link(href='/'+url+'&page='+(previousPage - 1))= previousPage - 1
+								a.page-link(href='/'+url+'page='+(previousPage - 1))= previousPage - 1
 							li.page-item
-								a.page-link(href='/'+url+'&page='+previousPage)= previousPage
+								a.page-link(href='/'+url+'page='+previousPage)= previousPage
 							li.page-item.active(aria-current='page')
 								span.page-link= page
 									span.sr-only (current)
 						else
 							li.page-item
-								a.page-link(href='/'+url+'&page=1') First
+								a.page-link(href='/'+url+'page=1') First
 							li.page-item
-								a.page-link(href='/'+url+'&page='+previousPage) Previous
+								a.page-link(href='/'+url+'page='+previousPage) Previous
 							li.page-item
-								a.page-link(href='/'+url+'&page='+previousPage)= previousPage
+								a.page-link(href='/'+url+'page='+previousPage)= previousPage
 							li.page-item.active(aria-current='page')
 								span.page-link= page
 									span.sr-only (current)
 							li.page-item
-								a.page-link(href='/'+url+'&page='+ nextPage)= nextPage
+								a.page-link(href='/'+url+'page='+ nextPage)= nextPage
 							li.page-item
-								a.page-link(href='/'+url+'&page='+ nextPage) Next
+								a.page-link(href='/'+url+'page='+ nextPage) Next
 							li.page-item
-								a.page-link(href='/'+url+'&page='+allPage) Last
+								a.page-link(href='/'+url+'page='+allPage) Last
 
