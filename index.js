@@ -1,4 +1,5 @@
 const express = require('express');
+
 const user = require('./routes/user.router');
 const auth = require('./routes/auth.router');
 const middleware = require('./auth/auth.middleware');
