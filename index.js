@@ -2,6 +2,7 @@ const express = require('express');
 const user = require('./routes/user.router');
 const auth = require('./routes/auth.router');
 const middleware = require('./auth/auth.middleware');
+const product = require('./routes/product.router');
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,7 @@ app.set('views', './views')
 
 app.use('/users', middleware.requireAuth, user);
 app.use('/auth', middleware.confirmAuth, auth);
+app.use('/products', product);
 app.get('/logout', function(res, res) {
 	res.clearCookie("userId");
 	res.redirect('/');
