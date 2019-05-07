@@ -1,21 +1,18 @@
 {
   "users": [
     {
-      "name": "Thanh",
-      "phone": "0818022166",
-      "id": "uDP1h_hj1",
-      "email": "hongvinhxc@gmail.com",
-      "password": "e10adc3949ba59abbe56e057f20f883e"
-    },
-    {
-      "name": "Thanh",
-      "phone": "0972820506",
-      "id": "nBPimxCbZ"
-    },
-    {
       "name": "Vinh",
       "phone": "0818022166",
-      "id": "CXKhUe0WH"
+      "id": "ML_2Jje7O",
+      "email": "hongvinhxc@gmail.com",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "avatar": "uploads/fcd9f75dcafa6c8e5a1de1c70a5365b1"
+    },
+    {
+      "name": "Thanh",
+      "phone": "0818022166",
+      "id": "uMlUfsBG2",
+      "avatar": "uploads/ce0dc8e4c4da6415b64a0563df111df1"
     }
   ],
   "products": [
