@@ -1,4 +1,6 @@
+require('dotenv').config();
 const express = require('express');
+console.log(process.env);
 
 const user = require('./routes/user.router');
 const auth = require('./routes/auth.router');
@@ -13,7 +15,7 @@ const cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cookieParser("doanxem"));
+app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(sessionMiddleware);
 
 app.get('/', authMiddleware.requireAuth, function(req, res) {
