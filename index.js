@@ -2,7 +2,8 @@ const express = require('express');
 
 const user = require('./routes/user.router');
 const auth = require('./routes/auth.router');
-const middleware = require('./auth/auth.middleware');
+const authMiddleware = require('./middlewares/auth.middleware');
+const sessionMiddleware = require('./middlewares/session.middleware');
 const product = require('./routes/product.router');
 
 const app = express();
@@ -13,8 +14,9 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser("doanxem"));
+app.use(sessionMiddleware);
 
-app.get('/', middleware.requireAuth, function(req, res) {
+app.get('/', authMiddleware.requireAuth, function(req, res) {
 	// console.log(req.cookies,req.signedCookies);
 	res.render('index');
 });
@@ -23,8 +25,8 @@ app.use(express.static('public'));
 app.set('view engine','pug');
 app.set('views', './views')
 
-app.use('/users', middleware.requireAuth, user);
-app.use('/auth', middleware.confirmAuth, auth);
+app.use('/users', authMiddleware.requireAuth, user);
+app.use('/auth', authMiddleware.confirmAuth, auth);
 app.use('/products', product);
 app.get('/logout', function(res, res) {
 	res.clearCookie("userId");
