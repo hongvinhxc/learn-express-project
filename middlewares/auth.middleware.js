@@ -27,3 +27,16 @@ module.exports.confirmAuth = function(req, res, next) {
 	}
 	res.redirect('/');
 }
+
+module.exports.checkUser = function(req, res, next) {
+	let user = db.get("users").find({id : req.signedCookies.userId}).value(); 
+	res.locals.user = user;
+	next();
+}
+
+module.exports.logout = function(req, res) {
+	db.get('sessions').remove({ id: req.signedCookies.sessionId }).write();
+	res.clearCookie("userId");
+	res.clearCookie("sessionId");
+	res.redirect('/');
+}

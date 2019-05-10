@@ -4,8 +4,16 @@ html
 	body
 		nav.navbar.navbar-expand-lg.navbar-dark.bg-primary
 			a.navbar-brand(href='/') Herry Vinh
+			ul.nav
+				li.nav-item
+					a.nav-link.text-light(href='/') Home
+				li.nav-item
+					a.nav-link.text-light(href='/users') Users
+				li.nav-item
+					a.nav-link.text-light(href='/products') Products
+			a.ml-auto.nav-link.text-light(href='/cart') Cart
 			if user
-				p.mb-0.ml-auto.mr-2.text-light= "Hello " + user.name
+				p.mb-0.mr-2.text-light= "Hello " + user.name
 				a.text-light(href='/logout') | Logout
 		.container.pt-5
 			block content
