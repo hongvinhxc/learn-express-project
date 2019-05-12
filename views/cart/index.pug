@@ -1,3 +1,20 @@
 extends ../layouts/common
 block content
 	h1 Cart
+	if length
+		table.table
+			tr
+				th Image
+				th Name
+				th Number
+				th Action
+			each product in products
+				tr
+					td.align-middle 
+						img(src=product.image width=48)
+					td.align-middle= product.name
+					td.align-middle= product.pcs
+					td.align-middle
+						a.btn.btn-light(href='/cart/delete/'+product.id) Delete
+	else
+		p= 'There is no product in cart'

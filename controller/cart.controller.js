@@ -1,6 +1,18 @@
 const db = require('../db');
 module.exports.getIndex = function(req, res) {
-	res.render('cart/index');
+	let sessionId = req.signedCookies.sessionId;
+	let productIds = db.get('sessions').find({id : sessionId}).get('cart').value();
+	let cart = [];
+	for (let id in productIds){
+		let product = db.get('products').find({id : id}).value();
+		product.pcs = productIds[id];
+		cart.push(product);
+	}
+	// console.log(cart);
+	res.render('cart/index', {
+		length: cart.length,
+		products: cart
+	});
 }
 
 module.exports.addToCart = function(req, res) {
