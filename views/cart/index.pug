@@ -13,7 +13,11 @@ block content
 					td.align-middle 
 						img(src=product.image width=48)
 					td.align-middle= product.name
-					td.align-middle= product.pcs
+					td.align-middle
+						a.btn.btn-light(href='/cart/decrease/'+product.id) -
+						form.d-inline(action='/cart/'+product.id+'/set' method="POST")
+							input(style="width: 50px; text-align: center" name="pcs" type="number" value=product.pcs min='1')
+						a.btn.btn-light(href='/cart/increase/'+product.id) +
 					td.align-middle
 						a.btn.btn-light(href='/cart/delete/'+product.id) Delete
 	else

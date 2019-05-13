@@ -34,14 +34,15 @@
       "id": "71c93ce9-ffbc-449d-af39-802574554445",
       "name": "Longos - Lasagna Veg",
       "image": "https://loremflickr.com/320/240",
-      "description": "blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere"
+      "description": "blandit non interdum in ante vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere",
+      "pcs": 0
     },
     {
       "id": "2caa4b62-67b0-43b4-8724-1e2e8eca36ce",
       "name": "Wood Chips - Regular",
       "image": "https://loremflickr.com/320/240",
       "description": "interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac",
-      "pcs": 1
+      "pcs": 5
     },
     {
       "id": "93fa3077-108d-4053-b19b-612eca402b5e",
@@ -66,7 +67,8 @@
       "id": "eabfe984-9709-4467-b600-037679154818",
       "name": "Juice - Lime",
       "image": "https://loremflickr.com/320/240",
-      "description": "ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis"
+      "description": "ac neque duis bibendum morbi non quam nec dui luctus rutrum nulla tellus in sagittis",
+      "pcs": 2
     },
     {
       "id": "b695f1ce-d778-4c96-bdfb-60eb00c82b4c",
@@ -683,6 +685,12 @@
       "id": "1f5ooGVwA",
       "cart": {
         "a4f6ca6d-f1ba-4f0f-9111-d16cece88d20": 1
+      }
+    },
+    {
+      "id": "Cx5CPxDhk",
+      "cart": {
+        "2caa4b62-67b0-43b4-8724-1e2e8eca36ce": 6
       }
     }
   ]

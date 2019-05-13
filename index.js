@@ -36,6 +36,7 @@ app.use('/users', authMiddleware.requireAuth, sessionMiddleware, user);
 app.use('/auth', authMiddleware.confirmAuth, auth);
 app.use('/products', authMiddleware.checkUser, sessionMiddleware, product);
 app.use('/cart', authMiddleware.checkUser, sessionMiddleware, cart);
+
 app.get('/logout', authMiddleware.logout);
 
 app.listen(port, () => console.log(`Server is listening on port ${port}`));
