@@ -12,7 +12,7 @@ block content
 					.card.mb-3
 						img.card-img-top(src=product.image)
 						.card-body
-							h5.card-title= product.name
+							a.h5.text-decoration-none.cursor-pointer.card-title(href="products/"+product.id)= product.name
 							p.card-text= product.description
 							a.btn.btn-primary(href="/cart/"+product.id) Add to cart
 			nav.ml-auto(aria-label='...')

@@ -14,7 +14,7 @@ html
 			a.ml-auto.nav-link.text-light(href='/cart')
 				span Cart 
 				if count > 0
-					span(style="color: 4a4a4a; background-color: #fdd835; padding: 0px 6px; border-radius: 20%")= count
+					span(style="color: #4a4a4a; background-color: #fdd835; padding: 0px 6px; border-radius: 20%")= count
 			if user
 				p.mb-0.mr-2.text-light= "Hello " + user.name
 				a.text-light(href='/logout') | Logout

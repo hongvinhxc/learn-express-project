@@ -1,0 +1,12 @@
+extends ../layouts/common
+block content
+	h1 Product information
+	.card.mb-3(style='max-width: 540px;')
+		.row.no-gutters
+			.col-md-4
+				img.card-img(src=product.image)
+			.col-md-8
+				.card-body
+					h5.card-title= product.name
+					p.card-text= product.description
+					a.btn.btn-primary(href="/cart/"+product.id) Add to cart

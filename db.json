@@ -42,7 +42,7 @@
       "name": "Wood Chips - Regular",
       "image": "https://loremflickr.com/320/240",
       "description": "interdum mauris ullamcorper purus sit amet nulla quisque arcu libero rutrum ac",
-      "pcs": 5
+      "pcs": 1
     },
     {
       "id": "93fa3077-108d-4053-b19b-612eca402b5e",
@@ -688,9 +688,9 @@
       }
     },
     {
-      "id": "Cx5CPxDhk",
+      "id": "jG-fyZQkc",
       "cart": {
-        "2caa4b62-67b0-43b4-8724-1e2e8eca36ce": 6
+        "e7b59a16-bb07-4691-84c4-36012a367b2e": 1
       }
     }
   ]

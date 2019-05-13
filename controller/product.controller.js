@@ -26,3 +26,11 @@ module.exports.search = function(req, res) {
 		url: 'products/search?q=' + key +"&"
 	});
 }
+
+module.exports.viewProduct = function(req, res) {
+	let id = req.params.id;
+	let product = db.get("products").find({id: id}).value();
+	res.render('products/product', {
+		product: product
+	})
+}
